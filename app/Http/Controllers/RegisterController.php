@@ -9,7 +9,8 @@ class RegisterController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['only' => ['create', 'store']]);
+        $this->middleware('auth', ['except' => ['create', 'store']]);
     }
 
 	public function create()

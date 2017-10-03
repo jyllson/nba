@@ -8,7 +8,8 @@ class LoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'destroy']);
+        $this->middleware('guest', ['only' => ['create', 'store']]);
+        $this->middleware('auth', ['except' => ['create', 'store']]);
     }
 
 	public function create()
