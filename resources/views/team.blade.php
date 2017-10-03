@@ -1,5 +1,5 @@
 @include('header')
-
+@include('nav')
 <div class="container">
 	<h1>{{$team->name}}</h1>
 	
